@@ -1,0 +1,2 @@
+WARNING: Data_mem.v:18: $readmemh(data.mem): Not enough words in the file for the requested range [0:1023].
+LXT2 info: dumpfile dump.lx2 opened for output.

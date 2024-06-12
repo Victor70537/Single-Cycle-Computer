@@ -1,0 +1,116 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_010630A0 .scope module, "Data_mem_tb" "Data_mem_tb" 2 1;
+ .timescale 0 0;
+P_011CA17C .param/l "OFFSET" 2 26, +C4<0>;
+v011C2828_0 .var "Clk_s", 0 0;
+v011C2880_0 .var "Data_address_s", 31 0;
+v011C28D8_0 .var "Data_in_s", 31 0;
+v011C2930_0 .net "Data_out_s", 31 0, v011C6118_0; 1 drivers
+v011C9E88_0 .var/i "inc", 31 0;
+v011C9EE0_0 .var "re_s", 0 0;
+v011C9F38_0 .var "we_s", 0 0;
+S_010631B0 .scope module, "Data_mem_test" "Data_mem" 2 9, 3 3, S_010630A0;
+ .timescale 0 0;
+v01063F50_0 .net "clk", 0 0, v011C2828_0; 1 drivers
+v011C98D0_0 .net "data_address", 31 0, v011C2880_0; 1 drivers
+v011C9990_0 .net "data_in", 31 0, v011C28D8_0; 1 drivers
+v011C99E8 .array "data_memory", 1023 0, 31 0;
+v011C6118_0 .var "data_out", 31 0;
+v011C6170_0 .net "re", 0 0, v011C9EE0_0; 1 drivers
+v011C61C8_0 .net "we", 0 0, v011C9F38_0; 1 drivers
+E_011CA118 .event posedge, v01063F50_0;
+    .scope S_010631B0;
+T_0 ;
+    %vpi_call 3 18 "$readmemh", "data.mem", v011C99E8;
+    %end;
+    .thread T_0;
+    .scope S_010631B0;
+T_1 ;
+    %wait E_011CA118;
+    %load/v 8, v011C61C8_0, 1;
+    %jmp/0xz  T_1.0, 8;
+    %load/v 8, v011C9990_0, 32;
+    %ix/getv 3, v011C98D0_0;
+    %jmp/1 t_0, 4;
+    %ix/load 0, 32, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v011C99E8, 0, 8;
+t_0 ;
+T_1.0 ;
+    %load/v 8, v011C6170_0, 1;
+    %jmp/0xz  T_1.2, 8;
+    %ix/getv 3, v011C98D0_0;
+    %load/av 8, v011C99E8, 32;
+    %ix/load 0, 32, 0;
+    %assign/v0 v011C6118_0, 0, 8;
+T_1.2 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_010630A0;
+T_2 ;
+    %ix/load 0, 1, 0;
+    %assign/v0 v011C2828_0, 0, 0;
+    %delay 10, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v011C2828_0, 0, 1;
+    %delay 10, 0;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_010630A0;
+T_3 ;
+    %set/v v011C9E88_0, 0, 32;
+    %end;
+    .thread T_3;
+    .scope S_010630A0;
+T_4 ;
+    %vpi_call 2 29 "$dumpvars", 1'sb0, S_010630A0;
+    %wait E_011CA118;
+    %wait E_011CA118;
+    %ix/load 0, 1, 0;
+    %assign/v0 v011C9F38_0, 0, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v011C9EE0_0, 0, 0;
+    %ix/load 0, 32, 0;
+    %assign/v0 v011C2880_0, 0, 0;
+    %wait E_011CA118;
+    %wait E_011CA118;
+    %ix/load 0, 1, 0;
+    %assign/v0 v011C9F38_0, 0, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v011C9EE0_0, 0, 1;
+    %ix/load 0, 32, 0;
+    %assign/v0 v011C2880_0, 0, 0;
+    %wait E_011CA118;
+    %wait E_011CA118;
+    %ix/load 0, 1, 0;
+    %assign/v0 v011C9F38_0, 0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v011C9EE0_0, 0, 0;
+    %ix/load 0, 32, 0;
+    %assign/v0 v011C2880_0, 0, 0;
+    %ix/load 0, 32, 0;
+    %assign/v0 v011C28D8_0, 0, 1;
+    %wait E_011CA118;
+    %wait E_011CA118;
+    %ix/load 0, 1, 0;
+    %assign/v0 v011C9F38_0, 0, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v011C9EE0_0, 0, 1;
+    %ix/load 0, 32, 0;
+    %assign/v0 v011C2880_0, 0, 0;
+    %wait E_011CA118;
+    %delay 10, 0;
+    %vpi_call 2 64 "$finish";
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "Data_mem_tb.v";
+    "Data_mem.v";

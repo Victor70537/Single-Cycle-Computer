@@ -1,0 +1,47 @@
+[*]
+[*] GTKWave Analyzer v3.3.48 (w)1999-2013 BSI
+[*] Mon Nov 14 22:21:57 2022
+[*]
+[dumpfile] "C:\Users\suppe\.vscode\projects\CompArch\SSC-Project-2\SingleCycleComputer\Educore-SingleCycle\FINAL_SCC\dump.lx2"
+[dumpfile_mtime] "Mon Nov 14 22:20:42 2022"
+[dumpfile_size] 33346
+[savefile] "C:\Users\suppe\.vscode\projects\CompArch\SSC-Project-2\SingleCycleComputer\Educore-SingleCycle\FINAL_SCC\wave.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-10.000000 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] IO_test.
+[treeopen] IO_test.Test.
+[treeopen] IO_test.Test.core.
+[sst_width] 197
+[signals_width] 238
+[sst_expanded] 1
+[sst_vpaned_height] 153
+@28
+IO_test.Test.Clk[0]
+IO_test.Test.Reset[0]
+@22
+IO_test.Test.data_memory_a[31:0]
+IO_test.Test.data_memory_in_v[31:0]
+IO_test.Test.data_memory_out_v[31:0]
+@28
+IO_test.Test.data_memory_read[0]
+IO_test.Test.data_memory_write[0]
+IO_test.Test.decode_error[1:0]
+@22
+IO_test.Test.instruction_memory_a[31:0]
+@28
+IO_test.Test.instruction_memory_en[0]
+@22
+IO_test.Test.instruction_memory_v[31:0]
+@23
+IO_test.Test.core.register_bank.Reg0[31:0]
+IO_test.Test.core.register_bank.Reg1[31:0]
+IO_test.Test.core.register_bank.Reg2[31:0]
+IO_test.Test.core.register_bank.Reg3[31:0]
+IO_test.Test.core.register_bank.Reg4[31:0]
+IO_test.Test.core.register_bank.Reg5[31:0]
+IO_test.Test.core.register_bank.Reg6[31:0]
+IO_test.Test.core.register_bank.Reg7[31:0]
+[pattern_trace] 1
+[pattern_trace] 0
